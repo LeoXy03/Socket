@@ -2,6 +2,7 @@
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.BindException;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -23,14 +24,17 @@ public class server {
      
 public static void main(String[] args) {
     try {
-    DataOutputStream out = null;
-    BufferedReader in = null;
+    DataOutputStream out;
+    BufferedReader in ;
+    
     ServerSocket serverSocket=new ServerSocket(2000);
     System.out.println("server avviato correttamente");
     Socket socket = serverSocket.accept();
+
     
     serverSocket.close();
-    socket.getOutputStream();
+        out = new DataOutputStream(socket.getOutputStream());
+        in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
     
     
     String messaggio="ciao";
