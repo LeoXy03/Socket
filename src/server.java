@@ -2,6 +2,7 @@
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.IOException;
+import java.net.BindException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.text.SimpleDateFormat;
@@ -20,11 +21,10 @@ import java.util.logging.Logger;
  */
 public class server {
      
-public class Server {
 public static void main(String[] args) {
     try {
-    DataOutputStream out;
-    BufferedReader in;
+    DataOutputStream out = null;
+    BufferedReader in = null;
     ServerSocket serverSocket=new ServerSocket(2000);
     System.out.println("server avviato correttamente");
     Socket socket = serverSocket.accept();
@@ -55,6 +55,8 @@ public static void main(String[] args) {
 } catch(BindException ex){
     System.err.println("porta occupata");
 }   catch (IOException ex) {    
-        Logger.getLogger(Server.class.getName()).log(Level.SEVERE, null, ex);
+        Logger.getLogger(server.class.getName()).log(Level.SEVERE, null, ex);
     }    
+    }
 }
+
