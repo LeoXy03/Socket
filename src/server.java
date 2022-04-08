@@ -10,7 +10,7 @@ import java.text.SimpleDateFormat;
 import java.text.SimpleDateFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
+import java.util.Date;
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -35,6 +35,7 @@ public static void main(String[] args) {
     serverSocket.close();
         out = new DataOutputStream(socket.getOutputStream());
         in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+    
     
     
     String messaggio="ciao";
